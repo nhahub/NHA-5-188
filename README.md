@@ -22,6 +22,23 @@ The project uses the **UR Fall Detection Dataset** for development and prototypi
 
 > The extracted UR Fall features are **not assumed to be the final features** used by the complete system.  
 > The final classifier input will depend on the temporal features produced by the Pose & Feature Engineering stage.
+## Project Documentation
+
+The detailed timeline, responsibilities, handoff contracts, weekly tasks, and acceptance criteria are maintained in Notion:
+
+**[Fall Detection — Full Team Timeline & Handover Guide](https://app.notion.com/p/Fall-Detection-Full-Team-Timeline-Handover-Guide-3e6c52e9fae58179b0cbc61832cdc2f9?source=copy_link)**
+
+The Notion guide is the main reference for the current agreed workflow and team handoffs.
+
+## Dataset
+
+**UR Fall Detection Dataset**
+
+The dataset contains fall and Activities of Daily Living (ADL) sequences and includes RGB/depth recordings and sensor information.
+
+Official reference:
+
+https://www.fenix.ur.edu.pl/~mkepski/ds/uf.html
 
 ## Team
 
@@ -112,49 +129,8 @@ A final backend response may contain:
 }
 ```
 
-## Week 1
 
-Week 1 focuses on understanding the data and defining how the different project stages will communicate.
 
-For the ML team, the first prototype includes:
-
-- loading and inspecting the UR Fall extracted-feature CSV
-- understanding the dataset columns and original posture labels
-- checking missing values and duplicates
-- basic exploratory data analysis
-- defining the binary project target: **Fall / Not Fall**
-- preparing a cleaned prototype dataset
-- defining the expected classifier input
-
-The Week 1 notebook and generated dataset are kept as the starting point for ML experimentation.
-
-## Important Team Rules
-
-1. Preserve `sequence`, `frame`, and `window` identifiers for debugging and handoffs.
-2. Document any coordinate, unit, normalization, or column-name transformation.
-3. Avoid train/test leakage between highly related frames or windows from the same sequence.
-4. Version frozen artifacts such as feature schemas, models, and API contracts.
-5. Communicate feature-definition changes to the ML team.
-6. Communicate model-input changes to the backend team.
-7. Integration should happen progressively rather than waiting until the final week.
-
-## Project Documentation
-
-The detailed timeline, responsibilities, handoff contracts, weekly tasks, and acceptance criteria are maintained in Notion:
-
-**[Fall Detection — Full Team Timeline & Handover Guide](https://app.notion.com/p/Fall-Detection-Full-Team-Timeline-Handover-Guide-3e6c52e9fae58179b0cbc61832cdc2f9?source=copy_link)**
-
-The Notion guide is the main reference for the current agreed workflow and team handoffs.
-
-## Dataset
-
-**UR Fall Detection Dataset**
-
-The dataset contains fall and Activities of Daily Living (ADL) sequences and includes RGB/depth recordings and sensor information.
-
-Official reference:
-
-https://www.fenix.ur.edu.pl/~mkepski/ds/uf.html
 
 ## Final Goal
 
@@ -170,4 +146,3 @@ Video / Frames
 → Fall / Not Fall Result
 ```
 
-without manually rewriting intermediate files between stages.
